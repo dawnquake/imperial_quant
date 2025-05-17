@@ -1,0 +1,3 @@
+wsl --manage ubuntu --move <new_location>
+wsl --manage ubuntu --set-default-user <username>
+wsl.exe --distribution ubuntu --exec dbus-launch true

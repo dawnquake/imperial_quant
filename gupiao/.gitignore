@@ -1,0 +1,12 @@
+__pycache__/
+
+data/
+osneyQuant/
+Qbot-main/
+vnpy/
+misc/
+
+wsl/
+
+test.py
+test*.py

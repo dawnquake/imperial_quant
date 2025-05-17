@@ -1,0 +1,67 @@
+CREATE TABLE stock
+(
+    exchange_code FixedString(6) COMMENT '交易所代码',
+    date Int32 COMMENT '自然日',
+    time Int32 COMMENT '时间*1000 (s)',
+
+    price Int32 COMMENT '成交价*10000 (元)',
+    trade_count Int64 COMMENT '当日累计成交笔数',
+
+    cum_volume Int64 COMMENT '当日累计成交量 (股)',
+    cum_amount Int64 COMMENT '当日累计成交额 (元)',
+
+    high_price Int32 COMMENT '最高价*10000 (元)',
+    low_price Int32 COMMENT '最低价*10000 (元)',
+    open_price Int32 COMMENT '开盘价*10000 (元)',
+    close_price Int32 COMMENT '收盘价*10000 (元)',
+
+    sell_price1 Int32 COMMENT '卖一价',
+    sell_price2 Int32 COMMENT '卖二价',
+    sell_price3 Int32 COMMENT '卖三价',
+    sell_price4 Int32 COMMENT '卖四价',
+    sell_price5 Int32 COMMENT '卖五价',
+    sell_price6 Int32 COMMENT '卖六价',
+    sell_price7 Int32 COMMENT '卖七价',
+    sell_price8 Int32 COMMENT '卖八价',
+    sell_price9 Int32 COMMENT '卖九价',
+    sell_price10 Int32 COMMENT '卖十价',
+
+    sell_volume1 Int64 COMMENT '卖一量',
+    sell_volume2 Int64 COMMENT '卖二量',
+    sell_volume3 Int64 COMMENT '卖三量',
+    sell_volume4 Int64 COMMENT '卖四量',
+    sell_volume5 Int64 COMMENT '卖五量',
+    sell_volume6 Int64 COMMENT '卖六量',
+    sell_volume7 Int64 COMMENT '卖七量',
+    sell_volume8 Int64 COMMENT '卖八量',
+    sell_volume9 Int64 COMMENT '卖九量',
+    sell_volume10 Int64 COMMENT '卖十量',
+
+    buy_price1 Int32 COMMENT '买一价',
+    buy_price2 Int32 COMMENT '买二价',
+    buy_price3 Int32 COMMENT '买三价',
+    buy_price4 Int32 COMMENT '买四价',
+    buy_price5 Int32 COMMENT '买五价',
+    buy_price6 Int32 COMMENT '买六价',
+    buy_price7 Int32 COMMENT '买七价',
+    buy_price8 Int32 COMMENT '买八价',
+    buy_price9 Int32 COMMENT '买九价',
+    buy_price10 Int32 COMMENT '买十价',
+
+    buy_volume1 Int64 COMMENT '买一量',
+    buy_volume2 Int64 COMMENT '买二量',
+    buy_volume3 Int64 COMMENT '买三量',
+    buy_volume4 Int64 COMMENT '买四量',
+    buy_volume5 Int64 COMMENT '买五量',
+    buy_volume6 Int64 COMMENT '买六量',
+    buy_volume7 Int64 COMMENT '买七量',
+    buy_volume8 Int64 COMMENT '买八量',
+    buy_volume9 Int64 COMMENT '买九量',
+    buy_volume10 Int64 COMMENT '买十量',
+
+    total_sell_volume Int64 COMMENT '叫卖总量 (股)',
+    total_buy_volume Int64 COMMENT '叫买总量 (股)'
+)
+ENGINE = ReplacingMergeTree
+PARTITION BY exchange_code
+ORDER BY (exchange_code, date, time);
