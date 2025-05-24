@@ -1,3 +1,7 @@
 pandas
 tzdata
 ib_async
+jupyter
+matplotlib
+plotly
+yfinance
